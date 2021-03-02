@@ -1,0 +1,35 @@
+---
+id: deploying_upsells
+title: Deploying Upsells
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Screenshot from '@theme/screenshot';
+
+When you make changes in the *Upsell Live* app, they will not appear on your website until you
+publish them to your theme.
+
+<Screenshot alt="Undeployed changes" src="undeployed-changes.png"
+  caption="The main page notifies us when we have undeployed changes"/>
+
+When you are ready to deploy your changes, click the <img class="inline-image" alt="Deploy" src={useBaseUrl('img/deploy-button.png')} />
+button at the top of the main page. You will be prompted as to which theme to deploy to.
+
+<Screenshot alt="Dialog asking which theme to deploy to" src="deploy-to-theme.png" />
+
+You may want to deploy to a development theme first to test things out before deploying to your live site.
+
+:::info
+When we deploy to any theme, whether it be the live theme or a development theme, the message about having undeployed changes will go away.
+Don't forget to deploy to your live theme if you want your customers to see them.
+:::
+
+The deploy process inserts a few code snippets into your theme, and usually takes a few seconds.
+
+## Removing deploys
+
+If you want to disable the upsell on your theme, you can use find the **Remove deploy** option by clicking on the
+arrow on the right side of the <img class="inline-image" alt="Deploy" src={useBaseUrl('img/deploy-with-arrow-button.png')} /> button.
+This will remove the code from the theme you choose.
+
+If you are uninstalling the *Upsell Live* app, you should use this function prior to the uninstall to remove the traces of code that have been
+left from previous deploys.

@@ -1,0 +1,42 @@
+---
+id: creating_upsells
+title: Creating Upsells
+sidebar_label: Creating Upsells
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Screenshot from '@theme/screenshot';
+
+To create an upsell, click the <img class="inline-image" alt="Create Upsell" src={useBaseUrl('img/create-upsell-button.png')} />
+link from the top menu on the main page of the Upsell Live app. You'll see a product search input.
+Start typing the name of a product that you'd like to upsell and choose one from the search results.
+
+<Screenshot alt="Screen on a fresh install" src="create-upsell-blank.png" caption="Prompt for product search"/>
+<Screenshot alt="Screen after choosing a product" src="create-upsell-product-chosen.png"
+            caption="Additional options appear after choosing a product"/>
+
+## Upsell options
+
+### Price Description
+
+<Screenshot alt="Upsells with differing price descriptions" src="upsells-with-price-descriptions.png"
+            alignright={true} />
+
+By default, the second line in the upsell simply shows the price or price range of the product.
+This can be customized for each upsell to show additional text, with or without the price.
+
+In the screenshot here, the Price Description has been set to <tt>{price}</tt>, <tt>Only {price}!!</tt>,
+and <tt>Buy some today!</tt>, respectively.
+
+<div class="clearfix"></div>
+
+### Cart Trigger
+
+Options for when the upsell will be shown to the user. The default is "None", to always show the upsell,
+but you may also specify a minimum cart value before the upsell is displayed. For example, you
+might highlight a specially-priced item but only for your customers with at least $100 in their cart.
+
+:::caution
+There's nothing to prevent a customer from adding an upsell item to their cart then removing the
+items they originally had. Do not use this feature to make special offers to customers who make a minimum
+purchase amount.
+:::
