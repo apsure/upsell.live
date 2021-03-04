@@ -1,0 +1,124 @@
+---
+id: cart_embedding
+title: Embedding Upsells
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Screenshot from '@theme/screenshot';
+import LinkExternal from '/static/svg/link-external.svg';
+
+By default, upsells appear as a popup when customers enter the shopping cart page. This requires no additional modifications to your theme
+other than what *Upsell Live* [automatically deploys](deploying_upsells).
+
+<Screenshot alt="Inline upsells" src="inline-upsells.png" caption="Upsells displayed inline on the cart page" alignright />
+
+One feature that sets *Upsell Live* apart from other upsell apps is the ability to embed the upsells directly within your cart page.
+This has a couple of advantages over the modal:
+
+  1. It doesn't interrupt your customer's shopping flow, and
+  2. The upsells are always visible on the shopping cart page.
+
+But, since every theme's shopping cart is different, we can't embed this automatically.
+You need to add a snippet of HTML to your cart's Liquid template exactly where you want it to render.
+
+<div class="clearfix"></div>
+
+:::note
+Embedding upsells requires editing of your shopping cart's Liquid template.
+
+If you're unfamiliar with theme editing, see [Shopify's guide to editing theme code](https://help.shopify.com/en/manual/online-store/os/using-themes/change-the-layout/theme-code)<LinkExternal className="icon-inline"/>.
+:::
+
+## The code
+
+The code you'll need to insert within your cart is simple:
+```html
+<div id="cart-upsell"></div>
+```
+When *Upsell Live* is ready to display the upsells, it looks for this `<div>` element, and
+renders the upsells within that element if it exists.
+
+The next question is where to put this code, which will depend on your site's theme.
+ * [Sites with a cart page](#sites-with-a-cart-page)
+ * [Sites with a cart drawer or modal](#sites-with-a-cart-drawer-or-modal)
+
+### Sites with a cart page
+
+<Screenshot alt="Cart page showing a potential upsell location" src="cart-without-upsell.png" alignright/>
+
+If you use a dedicated page for the shopping cart, chances are good the Liquid template is either `templates/cart.liquid` or `sections/cart-template.liquid`.
+
+For many themes, there is a blank section in the lower left section of the shopping cart page that works well for displaying upsells.
+If the theme supports cart notes and it is enabled, they may be placed here, otherwise it is empty.
+
+We're going to use Shopify's Venture theme as an example here. Your site's theme may be similar or it may be wildly different.
+
+```liquid title="/sections/cart-template.liquid, lines 85-92"
+<div class="grid cart__row">
+  {% if section.settings.cart_notes_enable %}
+    <div class="grid__item medium-up--one-half">
+      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+      <textarea name="note" id="CartSpecialInstructions" class="cart__note">{{ cart.note }}</textarea>
+    </div>
+  {% endif %}
+  <div class="grid__item cart__buttons text-right small--text-center{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %}">
+```
+
+If you already have Cart Notes enabled, this is as simple as inserting the code right before the note instructions:
+```liquid {4} title="/sections/cart-template.liquid, lines 85-93"
+<div class="grid cart__row">
+  {% if section.settings.cart_notes_enable %}
+    <div class="grid__item medium-up--one-half">
+      <div id="cart-upsell"></div>
+      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+      <textarea name="note" id="CartSpecialInstructions" class="cart__note">{{ cart.note }}</textarea>
+    </div>
+  {% endif %}
+  <div class="grid__item cart__buttons text-right small--text-center{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %}">
+```
+However, if you aren't using Cart Notes, you have to make additional changes so the `<div>` elements with the `medium-up--one-half` classes get rendered anyway.
+```liquid {2-4,7-9} title="/sections/cart-template.liquid, lines 85-93"
+<div class="grid cart__row">
+  <div class="grid__item medium-up--one-half">
+    <div id="cart-upsell"></div>
+    {% if section.settings.cart_notes_enable %}
+      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+      <textarea name="note" id="CartSpecialInstructions" class="cart__note">{{ cart.note }}</textarea>
+    {% endif %}
+  </div>
+  <div class="grid__item cart__buttons text-right small--text-center medium-up--one-half">
+```
+:::tip
+You aren't required to put the upsells here -- you could place them at the top or bottom of the cart, or anywhere inbetween.
+The above example is just the most common place to insert them.
+:::
+
+### Sites with a cart drawer or modal
+
+:::warning
+Because inlining doesn't always work with cart drawers or modals, this feature is not supported by Apsure.
+Knowledge of HTML, CSS, Liquid, and Javascript may be required to correctly implement.
+Consider
+[hiring a Shopify Expert](https://help.shopify.com/en/manual/experts-marketplace/hiring-help)<LinkExternal className="icon-inline icon-white"/>
+if you need help.
+:::
+
+<Screenshot alt="Example of a cart drawer with inline upsells" src="sidebar-cart-with-inline-upsells.png" alignright />
+
+If your website uses a cart that loads on every page, you'll need to locate the code that renders the drawer or modal.
+
+There is no standard as to the template name used here, so you'll need to search through your theme's templates to find it.
+Here are some examples:
+
+<dl>
+  <dt>Express</dt>
+  <dd><code>snippets/cart-drawer.liquid</code></dd>
+
+  <dt>Boundless</dt>
+  <dd><code>layout/theme.liquid</code></dd>
+
+  <dt>Brooklyn</dt>
+  <dd><code>snippets/ajax-cart-template</code></dd>
+</dl>
+
+Once you've located the template, the process is similar to [the instructions for sites with a cart page](#sites-with-a-cart-page).
+There may be some additional steps required to get it right.

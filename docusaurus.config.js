@@ -45,6 +45,9 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Apsure. Built with Docusaurus.`,
     },
+    prism: {
+      additionalLanguages: ['liquid']
+    }
   },
   presets: [
     [
