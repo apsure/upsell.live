@@ -9,31 +9,29 @@ import styles from './styles.module.css';
 const features = [
   {
     title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: 'svg/cart-with-upsells.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Upsell Live was designed from the ground up to let you showcase additional
+        products from the shopping cart as easily as possible.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Feature #2',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Awesome feature #2
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Feature #3',
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Awesome feature #3
       </>
     ),
   },
@@ -60,7 +58,7 @@ function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Documentation for Upsell Live, a Shopify app for upselling additional products before users check out">
+      description="Documentation for Upsell Live, a Shopify app for upselling additional products before checkout">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
