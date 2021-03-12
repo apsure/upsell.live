@@ -18,21 +18,22 @@ const features = [
     ),
   },
   {
-    title: 'Additional Incremental Sales',
+    title: 'Generate Additional Sales',
     imageUrl: 'svg/candy-duplicated.svg',
     description: (
       <>
-        It's like the candy display at the grocery store, giving your customers
-        additional items to buy before checking out.
+        It's like the candy display at the grocery store --
+        it gives your customers additional items to consider before checking out.
       </>
     ),
   },
   {
-    title: 'Feature #3',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Features Galore',
+    imageUrl: 'svg/programmer.svg',
     description: (
       <>
-        Awesome feature #3
+        Upsells are customizable to match your site and highlight exactly
+        the products you want.
       </>
     ),
   },
