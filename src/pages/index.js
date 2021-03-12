@@ -18,11 +18,12 @@ const features = [
     ),
   },
   {
-    title: 'Feature #2',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Additional Incremental Sales',
+    imageUrl: 'svg/candy-duplicated.svg',
     description: (
       <>
-        Awesome feature #2
+        It's like the candy display at the grocery store, giving your customers
+        additional items to buy before checking out.
       </>
     ),
   },

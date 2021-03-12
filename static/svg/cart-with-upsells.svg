@@ -21,7 +21,7 @@
     }
 
     .svg-fade-in {
-      animation: fade-in 10s ease infinite;
+      animation: fade-in 10s infinite;
     }
   </style>
   <defs
