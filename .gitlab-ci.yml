@@ -1,0 +1,40 @@
+---
+# Variables that need to be set:
+#   AWS_REGION
+#   AWS_S3_BUCKET
+#   AWS_ACCESS_KEY_ID
+#   AWS_SECRET_ACCESS_KEY
+
+image: node:15-buster
+
+stages:
+  - deploy
+
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - cd
+  - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  - unzip awscliv2.zip
+  - ./aws/install
+  - mkdir .aws
+
+  - echo "[default]\nregion = $AWS_REGION\n" > ".aws/config"
+  - echo "[default]\naws_access_key_id = $AWS_ACCESS_KEY_ID\naws_secret_access_key = $AWS_SECRET_ACCESS_KEY\n" > ".aws/credentials"
+  - chmod 600 .aws/*
+
+deploy:
+  stage: deploy
+  script:
+    - cd $CI_PROJECT_DIR
+    - yarn
+    - yarn build
+    - aws s3 cp build s3://$AWS_S3_BUCKET/ --recursive
+  environment:
+    name: production
+    url: https://www.upsell.live
+  # only:
+  #   - master
