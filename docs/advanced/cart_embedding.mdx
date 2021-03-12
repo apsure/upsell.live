@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Screenshot from '@theme/screenshot';
 import LinkExternal from '/static/svg/link-external.svg';
 
-By default, upsells appear as a popup when customers enter the shopping cart page. This requires no additional modifications to your theme
-other than what *Upsell Live* [automatically deploys](deploying_upsells).
+By default, upsells appear as a popup when customers either click on the "Checkout" button or enter the shopping cart page.
+This requires no additional modifications to your theme other than what [*Upsell Live* deploys](deploying_upsells).
 
 <Screenshot alt="Inline upsells" src="inline-upsells.png" caption="Upsells displayed inline on the cart page" alignright />
 
@@ -37,7 +37,7 @@ The code you'll need to insert within your cart is simple:
 When *Upsell Live* is ready to display the upsells, it looks for this `<div>` element, and
 renders the upsells within that element if it exists.
 
-The next question is where to put this code, which will depend on your site's theme.
+Where you place this code will depend on your site's theme.
  * [Sites with a cart page](#sites-with-a-cart-page)
  * [Sites with a cart drawer or modal](#sites-with-a-cart-drawer-or-modal)
 

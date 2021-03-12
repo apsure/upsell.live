@@ -84,7 +84,7 @@ shopping cart.
 
 ## Implementation Example
 
-Let's implement a simple example that adds a "Giftwrap: true" property to upsells added to the cart when the selected product has a "Giftable"
+Let's implement a simple example that adds a "Giftwrap: yes" property to upsells added to the cart when the selected product has a "Giftable"
 tag associated with it.
 
 ```javascript title="assets/add-gift-options.js"
@@ -99,10 +99,9 @@ function addGiftOptions (e) {
 
 document.addEventListener('upsellselected', addGiftOptions, true)
 ```
-The `addGiftOptions` function works as follows:
- 1. It looks at the product's tags to see if it has the "Giftable" tag associated with it. If it does, it
-    1. Stops the event's propagation (so the default action of adding the item to the cart is prevented); then
-    2. Uses the callback to add the Giftwrap property with the value of 'yes'.
+The `addGiftOptions` function works by looking at the product's tags to see if it has the "Giftable" tag associated with it. If it does, it
+  1. Stops the event's propagation (so the default action of adding the item to the cart is prevented); then
+  2. Uses the callback to add the Giftwrap property with the value of 'yes'.
 
 Then, we listen to the event with the last statement. The last argument, `true`, is important in this case because we want this event handler
 to execute before all others.
