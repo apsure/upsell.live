@@ -36,5 +36,5 @@ deploy:
   environment:
     name: production
     url: https://www.upsell.live
-  # only:
-  #   - master
+  only:
+    - master
