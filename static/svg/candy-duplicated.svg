@@ -41,17 +41,17 @@
    inkscape:window-maximized="1"
    inkscape:current-layer="Capa_1" />
   <style>
-    @keyframes display1 { 0%, 10% { opacity: 0; } 21% { opacity: 1 } }
-    @keyframes display2 { 0%, 20% { opacity: 0; } 30% { opacity: 1 } }
-    @keyframes display3 { 0%, 29% { opacity: 0; } 38% { opacity: 1 } }
-    @keyframes display4 { 0%, 37% { opacity: 0; } 45% { opacity: 1 } }
-    @keyframes display5 { 0%, 44% { opacity: 0; } 51% { opacity: 1 } }
-    @keyframes display6 { 0%, 50% { opacity: 0; } 56% { opacity: 1 } }
-    @keyframes display7 { 0%, 55% { opacity: 0; } 60% { opacity: 1 } }
-    @keyframes display8 { 0%, 59% { opacity: 0; } 63% { opacity: 1 } }
-    @keyframes display9 { 0%, 62% { opacity: 0; } 65% { opacity: 1 } }
-    @keyframes display10 { 0%, 64% { opacity: 0; } 66% { opacity: 1 } }
-    @keyframes display11 { 0%, 65% { opacity: 0; } 67% { opacity: 1 } }
+    @keyframes display1 { 0%, 10% { opacity: 0; transform: scale(2); filter: blur(5px); } 21% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display2 { 0%, 20% { opacity: 0; transform: scale(2); filter: blur(5px); } 30% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display3 { 0%, 29% { opacity: 0; transform: scale(2); filter: blur(5px); } 38% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display4 { 0%, 37% { opacity: 0; transform: scale(2); filter: blur(5px); } 45% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display5 { 0%, 44% { opacity: 0; transform: scale(2); filter: blur(5px); } 51% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display6 { 0%, 50% { opacity: 0; transform: scale(2); filter: blur(5px); } 56% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display7 { 0%, 55% { opacity: 0; transform: scale(2); filter: blur(5px); } 60% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display8 { 0%, 59% { opacity: 0; transform: scale(2); filter: blur(5px); } 63% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display9 { 0%, 62% { opacity: 0; transform: scale(2); filter: blur(5px); } 65% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display10 { 0%, 64% { opacity: 0; transform: scale(2); filter: blur(5px); } 66% { opacity: 1; transform: scale(1); filter: blur(0); } }
+    @keyframes display11 { 0%, 65% { opacity: 0; transform: scale(2); filter: blur(5px); } 67% { opacity: 1; transform: scale(1); filter: blur(0); } }
 
     .candy:nth-of-type(2) { animation: display1 10s infinite; }
     .candy:nth-of-type(3) { animation: display2 10s infinite; }
