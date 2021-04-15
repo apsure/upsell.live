@@ -14,12 +14,19 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.71",
     "@docusaurus/preset-classic": "2.0.0-alpha.71",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@headlessui/react": "^0.3.1",
     "@mdx-js/react": "^1.6.21",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "autoprefixer": "^9",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.1.11",
+    "postcss": "^7",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "spectre.css": "^0.5.9"
+    "spectre.css": "^0.5.9",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "browserslist": {
     "production": [
