@@ -9,3 +9,145 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #8686bf;
+  --ifm-color-primary-dark: #7070b3;
+  --ifm-color-primary-darker: #55559c;
+  --ifm-color-primary-darkest: #45458a;
+  --ifm-color-primary-light: #9898cc;
+  --ifm-color-primary-lighter: #b5b5dd;
+  --ifm-color-primary-lightest: #d5d5eb;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-background-color: var(--ifm-color-primary-darkest);
+  --ifm-navbar-link-color: #fff;
+  --color-medium-gray: #888;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+ul, ol {
+  margin: 0 0 var(--ifm-list-margin);
+  padding-left: var(--ifm-list-left-padding);
+}
+
+ul {
+  list-style: square;
+}
+
+ol {
+  list-style: decimal;
+}
+
+dd {
+  margin: revert;
+}
+
+a {
+  color: var(--ifm-link-color);
+}
+
+.navbar__brand:hover {
+  color: var(--ifm-link-hover-color);
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.screenshot {
+  margin: 0.5rem auto 2rem;
+  box-shadow: 0 0.5rem 1.3rem rgba(48, 55, 66, 0.3);
+  border: solid 1px var(--ifm-color-primary-lightest);
+  display: block;
+}
+
+.screenshot.float-right,
+.figure.float-right {
+  margin-left: 1rem;
+  width: 50%;
+}
+
+.figure {
+  margin: 0 0 1.5rem 0;
+
+  .screenshot {
+    margin-bottom: 0.5rem;
+  }
+
+  .figure-caption {
+    color: var(--color-medium-gray);
+    margin-top: 0;
+    text-align: center;
+    font-size: small;
+    font-style: oblique;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.inline-image {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.accordion {
+  border-bottom: solid 1px var(--ifm-color-primary-lightest);
+
+  &:first-child {
+    border-top: solid 2px var(--ifm-color-primary);
+  }
+
+  &:last-child {
+    border-bottom: solid 2px var(--ifm-color-primary);
+  }
+
+  summary {
+    font-weight: 500;
+  }
+
+  .accordion-body {
+    margin-top: 0.4rem;
+    padding-left: 1.9rem;
+  }
+}
+
+// Default colors have very poor contrast. Setting colors so the contrast ratio is at least 4.51
+.admonition-info {
+  --ra-admonition-icon-color: #324c6c;
+  --ifm-alert-color: #324c6c;
+}
+
+.admonition-caution {
+  --ra-admonition-icon-color: #665016;
+  --ifm-alert-color: #665016;
+}
+
+.icon-inline {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-left: 0.2rem;
+}
+
+.icon-white {
+  fill: #fff;
+}
