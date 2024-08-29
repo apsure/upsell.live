@@ -1,16 +1,28 @@
 module.exports = {
   title: "Upsell Live",
   tagline: "Increase your sales on Shopify",
-  url: "https://upsell.live/docs",
+  url: "https://upsell.live",
   baseUrl: "/",
   organizationName: "apsure",
   projectName: "upsell.live",
-  deploymentBranch: "main",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  plugins: ["docusaurus-plugin-sass"],
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
   themeConfig: {
+    mainWrapper: "main-wrapper",
     navbar: {
       title: "Upsell Live",
       logo: {
@@ -85,9 +97,7 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Apsure. Built with Docusaurus.`,
     },
-    prism: {
-      additionalLanguages: ["liquid"],
-    },
+    prism: {},
   },
   presets: [
     [
@@ -97,7 +107,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.scss"),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

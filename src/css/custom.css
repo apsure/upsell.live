@@ -1,14 +1,8 @@
 /* stylelint-disable docusaurus/copyright-header */
 
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
-
-@import "@fortawesome/fontawesome-free/scss/solid";
-@import "@fortawesome/fontawesome-free/scss/regular";
-@import "@fortawesome/fontawesome-free/scss/fontawesome";
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* You can override the default Infima variables here. */
 :root {
