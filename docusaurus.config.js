@@ -1,30 +1,33 @@
 module.exports = {
-  title: 'Upsell Live',
-  tagline: 'Increase your sales on Shopify',
-  url: 'https://upsell.live/docs',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  plugins: ['docusaurus-plugin-sass'],
+  title: "Upsell Live",
+  tagline: "Increase your sales on Shopify",
+  url: "https://upsell.live/docs",
+  baseUrl: "/",
+  organizationName: "apsure",
+  projectName: "upsell.live",
+  deploymentBranch: "main",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  plugins: ["docusaurus-plugin-sass"],
   themeConfig: {
     navbar: {
-      title: 'Upsell Live',
+      title: "Upsell Live",
       logo: {
-        alt: 'Upsell Live Logo',
-        src: 'img/logo.svg',
-        href: '/'
+        alt: "Upsell Live Logo",
+        src: "img/logo.svg",
+        href: "/",
       },
       items: [
         {
           label: "Home",
           to: "/",
-          icon: "fas fa-home"
+          icon: "fas fa-home",
         },
         {
           label: "Documentation",
           to: "/docs",
-          icon: "fas fa-layer-group"
+          icon: "fas fa-layer-group",
         },
         // {
         //   position: "right",
@@ -41,7 +44,7 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         // {
         //   title: 'Solutions',
@@ -53,13 +56,13 @@ module.exports = {
         //   ]
         // },
         {
-          title: 'Support',
+          title: "Support",
           items: [
             // { label: 'Pricing', to: '#' },
-            { label: 'Documentation', to: '/docs' },
+            { label: "Documentation", to: "/docs" },
             // { label: 'Guides', to: '#' },
             // { label: 'API Status', to: '#' }
-          ]
+          ],
         },
         // {
         //   title: 'Company',
@@ -72,29 +75,29 @@ module.exports = {
         //   ]
         // },
         {
-          title: 'Legal',
+          title: "Legal",
           items: [
             // { label: 'Claim', to: '#' },
-            { label: 'Privacy', to: '/privacy' },
+            { label: "Privacy", to: "/privacy" },
             // { label: 'Terms', to: '#' }
-          ]
-        }
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Apsure. Built with Docusaurus.`,
     },
     prism: {
-      additionalLanguages: ['liquid']
-    }
+      additionalLanguages: ["liquid"],
+    },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       },
     ],
