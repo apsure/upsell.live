@@ -3,7 +3,7 @@ module.exports = {
   tagline: "Increase your sales on Shopify",
   url: "https://upsell.live",
   baseUrl: "/",
-  organizationName: "apsure",
+  organizationName: "ten-thousand-hammers",
   projectName: "upsell.live",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
